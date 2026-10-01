@@ -1,0 +1,96 @@
+.banner {
+	--redeem-gold: #d7b985;
+	--redeem-teal: #9bc8c6;
+	--redeem-muted: #acb5c7;
+	container-type: inline-size;
+	width: 100%;
+	min-height: clamp(410px, 60vh, 450px);
+	padding: 30px 32px;
+	overflow: hidden;
+	border: 1px solid rgba(181, 197, 222, 0.15);
+	border-radius: 12px;
+	background:
+		radial-gradient(ellipse at 79% 49%, rgba(91, 126, 155, 0.17), transparent 41%),
+		linear-gradient(125deg, #1b2032, #22293d 58%, #1a2031);
+	box-shadow: 0 20px 56px rgba(4, 8, 18, 0.23), inset 0 1px rgba(255, 255, 255, 0.035);
+	color: #f3f5f9;
+}
+
+.layout { display: grid; min-height: 0; grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr); align-items: center; gap: 20px; }
+.content { position: relative; z-index: 1; padding-left: 7px; }
+.kicker { margin: 0 0 13px; color: var(--redeem-gold); font-size: 9px; font-weight: 750; letter-spacing: 1.6px; }
+.heading { max-width: 390px; margin: 0; color: #f4f6fa; font-size: clamp(30px, 3.2vw, 43px); font-weight: 650; line-height: 1.08; }
+.description { max-width: 365px; margin: 15px 0 22px; color: #b6bfd0; font-size: 14px; line-height: 1.65; }
+.cta { display: inline-flex; min-height: 46px; align-items: center; justify-content: center; gap: 12px; padding: 0 18px; border: 1px solid #e3cda4; border-radius: 6px; background: linear-gradient(135deg, #ddc69d, #c5a878); color: #1c2232; font-size: 12px; font-weight: 750; transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease; }
+.cta:hover { transform: translateY(-2px); border-color: #f0debd; background: #e6d1aa; color: #1c2232; box-shadow: 0 8px 22px rgba(193, 159, 105, 0.2); }
+.cta:active { transform: translateY(0) scale(0.98); box-shadow: none; }
+.cta:focus-visible { outline: 2px solid #f0dfc1; outline-offset: 3px; }
+
+.visual { position: relative; display: grid; min-height: 292px; grid-template-columns: minmax(0, 1fr) 48px minmax(0, 1fr); align-items: center; isolation: isolate; }
+.sceneGlow { position: absolute; z-index: -1; top: 23px; left: 2%; width: 96%; height: 224px; border: 1px solid rgba(179, 201, 224, 0.1); border-radius: 50%; background: radial-gradient(ellipse, rgba(91, 131, 153, 0.13), rgba(37, 49, 68, 0.03) 63%, transparent 74%); }
+.assetCard { position: relative; z-index: 2; display: flex; min-width: 0; min-height: 157px; flex-direction: column; align-items: center; padding: 12px 8px 11px; border: 1px solid rgba(185, 202, 225, 0.17); border-radius: 8px; background: linear-gradient(155deg, rgba(42, 54, 75, 0.98), rgba(27, 36, 53, 0.98)); box-shadow: 0 15px 27px rgba(4, 8, 18, 0.28), inset 0 1px rgba(255, 255, 255, 0.045); }
+.gemCard { transform: translateY(-12px); }
+.payoutCard { transform: translateY(15px); border-color: rgba(212, 187, 139, 0.24); background: linear-gradient(155deg, rgba(51, 52, 55, 0.97), rgba(30, 36, 50, 0.98)); }
+.cardTop { display: flex; width: 100%; align-items: center; justify-content: space-between; color: #97a5b9; font-size: 9px; font-weight: 800; letter-spacing: 0.4px; white-space: nowrap; }
+.step { color: #748299; font-size: 9px; }
+.gemPile { position: relative; display: flex; width: 66px; height: 53px; align-items: center; justify-content: center; margin-top: 9px; }
+.gem { position: absolute; display: block; width: 27px; height: 31px; clip-path: polygon(50% 0, 91% 23%, 80% 78%, 50% 100%, 18% 78%, 8% 23%); background: linear-gradient(135deg, #a8d3d4 0%, #689b9f 55%, #456c7d 100%); filter: drop-shadow(0 5px 8px rgba(5, 9, 18, 0.22)); }
+.gem::after { position: absolute; inset: 2px 4px auto; height: 25px; clip-path: polygon(50% 0, 91% 23%, 80% 78%, 50% 100%, 18% 78%, 8% 23%); border: 1px solid rgba(225, 242, 238, 0.28); content: ""; }
+.gemOne { z-index: 2; left: 20px; top: 7px; }
+.gemTwo { left: 7px; top: 18px; width: 22px; height: 25px; transform: rotate(-13deg); opacity: 0.84; background: linear-gradient(135deg, #d4bd8b, #8d7858); }
+.gemThree { right: 6px; top: 17px; width: 21px; height: 24px; transform: rotate(12deg); opacity: 0.9; }
+.assetName { margin-top: 2px; color: #edf1f7; font-size: 15px; font-weight: 700; line-height: 1; }
+.assetMeta { margin-top: 6px; color: #8492a7; font-size: 9px; font-weight: 750; letter-spacing: 0.2px; text-align: center; overflow-wrap: anywhere; }
+
+.redeemStep { position: relative; z-index: 4; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; }
+.redeemIcon { display: grid; width: 35px; aspect-ratio: 1; place-items: center; border: 1px solid rgba(213, 189, 145, 0.45); border-radius: 50%; background: linear-gradient(145deg, #364256, #252e42); box-shadow: 0 0 0 5px rgba(174, 192, 218, 0.05), 0 6px 16px rgba(4, 8, 18, 0.24); color: var(--redeem-gold); font-size: 16px; }
+.flowArrow { position: absolute; top: 23px; color: #c5d4e2; font-size: 22px; font-weight: 300; animation: payout-flow 2s ease-in-out infinite; }
+.redeemLabel { color: #a0adbe; font-size: 9px; font-weight: 800; letter-spacing: 0.4px; }
+.flowTrack { position: absolute; z-index: 1; top: 50%; right: 9%; left: 9%; height: 1px; background: linear-gradient(90deg, rgba(152, 194, 194, 0.12), rgba(211, 190, 150, 0.55), rgba(215, 190, 144, 0.16)); }
+.flowTrack span { position: absolute; top: -2px; left: 22%; width: 5px; aspect-ratio: 1; border-radius: 50%; background: #deca9f; box-shadow: 0 0 8px rgba(222, 202, 159, 0.66); animation: payout-dot 2.8s linear infinite; }
+.receiptTag { position: absolute; right: 2%; bottom: 11px; display: flex; align-items: center; gap: 5px; padding: 6px 8px; border: 1px solid rgba(165, 201, 191, 0.16); border-radius: 4px; background: rgba(25, 39, 48, 0.92); color: #b6cfca; font-size: 9px; font-weight: 800; letter-spacing: 0.4px; }
+.receiptTag span { display: grid; width: 13px; aspect-ratio: 1; place-items: center; border-radius: 50%; background: rgba(135, 189, 176, 0.18); color: #a8d2c4; font-size: 8px; }
+.sparkle { position: absolute; z-index: 1; color: #d9c291; }
+.sparkleOne { top: 29px; left: 37%; font-size: 13px; }
+.sparkleTwo { right: 11%; bottom: 47px; color: #a6c7ce; font-size: 17px; }
+
+@keyframes payout-flow {
+	0%, 100% { transform: translateX(-3px); opacity: 0.5; }
+	50% { transform: translateX(3px); opacity: 1; }
+}
+
+@keyframes payout-dot {
+	from { left: 18%; opacity: 0.25; }
+	50% { opacity: 1; }
+	to { left: 78%; opacity: 0.25; }
+}
+
+@container (max-width: 520px) {
+	.layout { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+	.visual { min-height: 228px; order: -1; }
+	.sceneGlow { top: 13px; height: 190px; }
+	.assetCard { min-height: 145px; }
+	.payoutCard { transform: translateY(10px); }
+	.flowArrow { top: 20px; }
+	.receiptTag { bottom: 2px; }
+}
+
+@media (min-width: 576px) and (max-width: 991px) {
+	.banner { min-height: clamp(380px, 68vh, 540px); padding: 22px 23px; }
+	.visual { min-height: 280px; }
+	.heading { font-size: clamp(28px, 3.8vw, 38px); }
+	.description { margin: 12px 0 18px; font-size: 12px; }
+}
+
+@media (max-width: 575px) {
+	.banner { min-height: clamp(330px, 76vh, 520px); padding: 18px 16px; }
+	.visual { min-height: 215px; }
+	.heading { font-size: clamp(29px, 8vw, 37px); }
+	.description { margin: 9px 0 15px; font-size: 12px; line-height: 1.5; }
+	.cta { min-height: 42px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.flowArrow, .flowTrack span { animation: none; }
+	.cta { transition: none; }
+}
